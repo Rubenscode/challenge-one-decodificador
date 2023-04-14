@@ -6,33 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decodificador</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/script.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <header>
-        <img src="./assets/img/logo_letra_a_azul.jpg" alt="Uma logo com a letra a azul">
-    </header>
-    <div class="container">
-        <div class="textarea">
-            <label for="texto">Digite seu texto</label>
-            <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
+    <div class="desktop">
+        <div class="div1">
+            <header>
+                <img src="./assets/img/logo_letra_a_azul.jpg" alt="Uma logo com a letra a azul">
+            </header>
+            <div class="container">
+                <div class="textarea">
+                    <label for="texto">Digite seu texto</label>
+                    <textarea name="texto" id="texto" required cols="30" rows="13"></textarea>
+                </div>
+        
+                <div class="aviso">
+                    <img src="./assets/img/circulo_exclamacao.png" alt="" srcset="">
+                    <p>Apenas letras minúsculas e sem acento.</p>
+                </div>
+        
+                <div class="grupo-botoes">
+                    <button onclick="encrypt()" id="encrypt" type="submit">Criptografar</button>
+                    <button onclick="decrypt()" id="decrypt" type="submit">Descriptografar</button>
+                </div>
+            </div>
         </div>
-
-        <div class="aviso">
-            <img src="./assets/img/circulo_exclamacao.png" alt="" srcset="">
-            <p>Apenas letras minúsculas e sem acento.</p>
-        </div>
-
-        <div class="grupo-botoes">
-            <button type="submit">Criptografar</button>
-            <button type="submit">Descriptografar</button>
-        </div>
-
-        <div class="resposta">
-            <div>
-                <p>Nenhuma mensagem encontrada</p>
-                <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+        <div class="div2">
+            <div class="resposta">
+                <div id="com-mensagem">
+                    <textarea name="resposta" id="resposta" readonly></textarea>
+                    <button onclick="copyClipboard()" id="copiar" type="submit">Copiar</button>
+                </div>
+                <div id="sem-mensagem">   
+                    <img src="./assets/img/nenhuma_mensagem.jpg" alt="">             
+                    <p>Nenhuma mensagem encontrada</p>
+                    <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -41,7 +53,6 @@
         <p>Projeto Oracle - Oracle Next Education</p>
         <p>&copy; Copyright Rubens Almeida - 2023</p>
     </footer>
-
 </body>
 
 </html>
